@@ -8,10 +8,10 @@
 <br> 축구를 좋아하는 사람들을 위해 4대리그 순위 및 선수 통계를 제공
 <br> 게시판 기능을 통해 커뮤니티 서비스 제공
 <br><br> 시연영상 :  https://youtu.be/doY81h5K69w
-<br><br><br>
+<br><br>
 ## 📅개발 기간
 2024.04.08 ~ 2024.04.26
-<br><br><br>
+<br><br>
 ## 🏭개발환경
 <img src="https://img.shields.io/badge/Maven-3.6.3-blue?style=for-the-badge&logo=apache-maven&logoColor=white"/>
 <img src="https://img.shields.io/badge/Java-11-blue?style=for-the-badge&logo=java&logoColor=white"/>
@@ -21,7 +21,7 @@
 <img src="https://img.shields.io/badge/Spring%20Boot%20JDBC-2.5.3-brightgreen?style=for-the-badge&logo=spring&logoColor=white"/>
 <img src="https://img.shields.io/badge/Log4jdbc_log4j2-1.16-blue?style=for-the-badge&logo=apache-log4j&logoColor=white"/>
 
-<br><br><br>
+<br>
 
 
 ## ☁️ERD
