@@ -14,6 +14,14 @@
 <br>
 ## 🏭개발환경
 <img src="https://img.shields.io/badge/Maven-3.6.3-blue?style=for-the-badge&logo=apache-maven&logoColor=white"/>
+<img src="https://img.shields.io/badge/Java-11-blue?style=for-the-badge&logo=java&logoColor=white"/>
+<img src="https://img.shields.io/badge/Spring%20Boot-2.5.3-brightgreen?style=for-the-badge&logo=spring-boot&logoColor=white"/>
+<img src="https://img.shields.io/badge/MySQL-8.0-orange?style=for-the-badge&logo=mysql&logoColor=white"/>
+<img src="https://img.shields.io/badge/Tomcat%20Embed%20Jasper-9.0.36-lightgrey?style=for-the-badge&logo=apache-tomcat&logoColor=white"/>
+<img src="https://img.shields.io/badge/Spring%20Boot%20JDBC-2.5.3-brightgreen?style=for-the-badge&logo=spring&logoColor=white"/>
+<img src="https://img.shields.io/badge/Log4jdbc_log4j2-1.16-blue?style=for-the-badge&logo=apache-log4j&logoColor=white"/>
+
+
 
 
 ## ☁️ERD
