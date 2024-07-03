@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fbc.mapper.SerieMapper">
+
+	<select id="selectCount" resultType="Integer">
+		select count(*) from SerieRANK;
+	</select>
+
+
+ <select id="selectSerieList" resultType="com.fbc.dto.SerieDto">
+		<![CDATA[
+        SELECT
+         teamName,
+         matchesPlayed,
+         wins,
+         draws,
+         losses,
+         goalsPlusMinus,
+         goalsSum,
+         points
+        FROM
+          Serierank
+          ORDER BY
+          points
+          desc
+        ]]>
+	</select>
+	
+
+	  <select id="selectTeamByName" parameterType="String" resultType="com.fbc.dto.SerieDto">
+        <![CDATA[
+        SELECT
+            teamName,
+            matchesPlayed,
+            wins,
+            draws,
+            losses,
+            goalsPlusMinus,
+            goalsSum,
+            points
+        FROM
+           Serierank
+        WHERE
+            teamName = #{teamName}
+        ]]>
+    </select>
+    
+    <insert id="insertSerie" parameterType="com.fbc.dto.SerieDto">
+    <![CDATA[
+    INSERT INTO Serierank (
+        teamName,
+        matchesPlayed,
+        wins,
+        draws,
+        losses,
+        goalsPlusMinus,
+        goalsSum,
+        points
+    ) VALUES (
+        #{teamName},
+        #{matchesPlayed},
+        #{wins},
+        #{draws},
+        #{losses},
+        #{goalsPlusMinus},
+        #{goalsSum},
+        #{points}
+    )
+    ]]>
+</insert>
+	
+	 <update id="updateSerieForm" parameterType="com.fbc.dto.SerieDto">
+        <![CDATA[
+        UPDATE Serierank
+        SET 
+            matchesPlayed = #{matchesPlayed},
+            wins = #{wins},
+            draws = #{draws},
+            losses = #{losses},
+            goalsPlusMinus = #{goalsPlusMinus},
+            goalsSum = #{goalsSum},
+            points = #{points}
+        WHERE
+            teamName = #{teamName}
+        ]]>
+    </update>
+    
+     <delete id="delete" parameterType="String">
+        <![CDATA[
+        DELETE FROM Serierank
+        WHERE teamName = #{teamName}
+        ]]>
+    </delete>
+    
+    
+
+
+	
+</mapper>
+

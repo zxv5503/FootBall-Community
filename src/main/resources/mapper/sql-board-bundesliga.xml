@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fbc.mapper.BundesligaMapper">
+
+	<select id="selectCount" resultType="Integer">
+		select count(*) from bundesligaRANK;
+	</select>
+
+
+ <select id="selectBundesligaList" resultType="com.fbc.dto.BundesligaDto">
+		<![CDATA[
+        SELECT
+         teamName,
+         matchesPlayed,
+         wins,
+         draws,
+         losses,
+         goalsPlusMinus,
+         goalsSum,
+         points
+        FROM
+          bundesligarank
+          ORDER BY
+          points
+          desc
+        ]]>
+	</select>
+	
+
+	  <select id="selectTeamByName" parameterType="String" resultType="com.fbc.dto.BundesligaDto">
+        <![CDATA[
+        SELECT
+            teamName,
+            matchesPlayed,
+            wins,
+            draws,
+            losses,
+            goalsPlusMinus,
+            goalsSum,
+            points
+        FROM
+            BundesligaRank
+        WHERE
+            teamName = #{teamName}
+        ]]>
+    </select>
+    
+    <insert id="insertBundesliga" parameterType="com.fbc.dto.BundesligaDto">
+    <![CDATA[
+    INSERT INTO Bundesligarank (
+        teamName,
+        matchesPlayed,
+        wins,
+        draws,
+        losses,
+        goalsPlusMinus,
+        goalsSum,
+        points
+    ) VALUES (
+        #{teamName},
+        #{matchesPlayed},
+        #{wins},
+        #{draws},
+        #{losses},
+        #{goalsPlusMinus},
+        #{goalsSum},
+        #{points}
+    )
+    ]]>
+</insert>
+	
+	 <update id="updateBundesligaForm" parameterType="com.fbc.dto.BundesligaDto">
+        <![CDATA[
+        UPDATE Bundesligarank
+        SET 
+            matchesPlayed = #{matchesPlayed},
+            wins = #{wins},
+            draws = #{draws},
+            losses = #{losses},
+            goalsPlusMinus = #{goalsPlusMinus},
+            goalsSum = #{goalsSum},
+            points = #{points}
+        WHERE
+            teamName = #{teamName}
+        ]]>
+    </update>
+    
+     <delete id="delete" parameterType="String">
+        <![CDATA[
+        DELETE FROM Bundesligarank
+        WHERE teamName = #{teamName}
+        ]]>
+    </delete>
+    
+    
+
+
+	
+</mapper>
+

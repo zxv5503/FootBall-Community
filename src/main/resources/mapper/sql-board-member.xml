@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fbc.mapper.MemberMapper">
+
+	<select id="selectCount" resultType="Integer">
+		select count(*) from member;
+	</select>
+
+
+ <select id="selectMemberList" resultType="com.fbc.dto.Member">
+		<![CDATA[
+        SELECT
+        email,
+        password,
+        name
+        FROM
+          member
+         
+        ]]>
+	</select>
+	
+	<insert id="insertMember" parameterType="com.fbc.dto.Member">
+    <![CDATA[
+    INSERT INTO Member (
+       email,
+       password,
+       name
+    ) VALUES (
+        #{email},
+        #{password},
+        #{name}
+    )
+    ]]>
+</insert>
+	
+    <select id="memberByEmail" resultType="com.fbc.dto.Member">
+        SELECT * FROM member WHERE email = #{email}
+    </select>
+    
+    <update id="updateMember" parameterType="com.fbc.dto.Member">
+        <![CDATA[
+        UPDATE member
+        SET 
+            password = #{password},
+            name = #{name}
+            
+        WHERE
+            email = #{email}
+        ]]>
+    </update>
+
+
+
+
+	
+</mapper>
+

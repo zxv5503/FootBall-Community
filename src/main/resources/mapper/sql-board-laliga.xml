@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fbc.mapper.LaligaRankMapper">
+
+	<select id="selectCount" resultType="Integer">
+		select count(*) from LaligaRANK;
+	</select>
+
+
+ <select id="selectLaligaList" resultType="com.fbc.dto.LaligaRankDto">
+		<![CDATA[
+        SELECT
+         teamName,
+         matchesPlayed,
+         wins,
+         draws,
+         losses,
+         goalsPlusMinus,
+         goalsSum,
+         points
+        FROM
+          laligarank
+          ORDER BY
+          points
+          desc
+        ]]>
+	</select>
+	
+	  <select id="selectTeamByName" parameterType="String" resultType="com.fbc.dto.LaligaRankDto">
+        <![CDATA[
+        SELECT
+            teamName,
+            matchesPlayed,
+            wins,
+            draws,
+            losses,
+            goalsPlusMinus,
+            goalsSum,
+            points
+        FROM
+            laligarank
+        WHERE
+            teamName = #{teamName}
+        ]]>
+    </select>
+ <insert id="insertEpl" parameterType="com.fbc.dto.EplRankDto">
+    <![CDATA[
+    INSERT INTO eplrank (
+        teamName,
+        matchesPlayed,
+        wins,
+        draws,
+        losses,
+        goalsPlusMinus,
+        goalsSum,
+        points
+    ) VALUES (
+        #{teamName},
+        #{matchesPlayed},
+        #{wins},
+        #{draws},
+        #{losses},
+        #{goalsPlusMinus},
+        #{goalsSum},
+        #{points}
+    )
+    ]]>
+</insert>
+	
+	 <update id="updateLaligaForm" parameterType="com.fbc.dto.LaligaRankDto">
+        <![CDATA[
+        UPDATE laligarank
+        SET 
+            matchesPlayed = #{matchesPlayed},
+            wins = #{wins},
+            draws = #{draws},
+            losses = #{losses},
+            goalsPlusMinus = #{goalsPlusMinus},
+            goalsSum = #{goalsSum},
+            points = #{points}
+        WHERE
+            teamName = #{teamName}
+        ]]>
+    </update>
+    
+     <delete id="delete" parameterType="String">
+        <![CDATA[
+        DELETE FROM laligarank
+        WHERE teamName = #{teamName}
+        ]]>
+    </delete>
+	
+</mapper>
+
