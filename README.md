@@ -12,6 +12,9 @@
 ## 📅개발 기간
 2024.04.08 ~ 2024.04.26
 <br><br>
+## 개발 인원
+<br>1명(개인 프로젝트)
+<br><br>
 ## 🏭개발환경
 <img src="https://img.shields.io/badge/Maven-3.6.3-blue?style=for-the-badge&logo=apache-maven&logoColor=white"/>
 <img src="https://img.shields.io/badge/Java-11-blue?style=for-the-badge&logo=java&logoColor=white"/>
